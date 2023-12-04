@@ -1,7 +1,6 @@
-import { DatabaseSaver, DeviceReader } from '../components';
+import { DeviceReader } from '../components';
 import { Arduino, Epever, Goodwe } from '../models';
 import { FirestoreService, ModbusService } from '../service';
-import createConnection from '../database';
 import {
   classToObject,
   getCurrentDevice,
@@ -17,7 +16,7 @@ export class Server {
   dataRead?: Epever | Arduino;
 
   constructor() {
-    createConnection();
+    // createConnection();
   }
 
   readData = async (): Promise<Arduino | Epever | Goodwe> => {
@@ -33,9 +32,9 @@ export class Server {
   };
 
   saveOnDataBase = async (props: Arduino | Epever | Goodwe) => {
-    await DatabaseSaver[this.currentDevice || 'arduino'](props);
+    // await DatabaseSaver[this.currentDevice || 'arduino'](props);
 
-    console.log(`\n\n===== SAVED DATA ON DATABASE =====\n\n`);
+    console.log(`\n\n===== SKIPPED SAVE DATA ON DATABASE =====\n\n`);
   };
 
   saveOnFirestore = async (props: Arduino | Epever | Goodwe) => {
