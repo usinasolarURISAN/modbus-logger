@@ -1193,4 +1193,4 @@ export const EPEVER_NUMBER_KEY_TABLE_OPERATION_TYPE: EpeverNumberKeyTableOperati
     G8: 'w',
   };
 
-export const EPEVER_BASE_PATH_PORT = '/dev/ttyXRUSB';
+export const EPEVER_BASE_PATH_PORT = '/dev/ttyACM';
